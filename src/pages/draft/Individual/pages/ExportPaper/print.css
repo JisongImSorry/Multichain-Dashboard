@@ -1,0 +1,40 @@
+@media print {
+  /* Hide any elements that are not necessary for printing */
+  nav,
+  footer,
+  .ads {
+    display: none;
+  }
+
+  /* Adjust the layout of your page to make it more suitable for printing */
+  html,
+  body {
+    height: fit-content !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    print-color-adjust: exact;
+    display: inline-block;
+  }
+
+  .main,
+  section {
+    clear: both;
+    page-break-after: always;
+  }
+
+  /* Remove borders from tables */
+  table {
+    border: none;
+  }
+
+  /* Ensure that hyperlinks are underlined when printed */
+  a:link:after,
+  a:visited:after {
+    content: " (" attr(href) ") ";
+  }
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
